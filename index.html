@@ -1,117 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>UK SOURCE</title>
-
-  <!-- VERY IMPORTANT -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #000000, #001a1a);
-      color: #00ff99;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 5px 0;
-      font-size: 14px;
-    }
-
-    h2 {
-      margin: 3px 0 8px;
-      font-size: 11px;
-      border-bottom: 1px solid red;
-      padding-bottom: 3px;
-    }
-
-    .container {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .table-container {
-      flex: 1;
-      overflow-y: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      table-layout: fixed;
-    }
-
-    th, td {
-      border: 1px solid red;
-      padding: 3px;
-      font-size: 10px;
-      word-break: break-word;
-    }
-
-    th {
-      background-color: #001a12;
-    }
-
-    /* Column widths */
-    th:nth-child(1), td:nth-child(1) { width: 6%; }
-    th:nth-child(2), td:nth-child(2) { width: 40%; }
-
-    /* Equal columns */
-    th:nth-child(3), td:nth-child(3),
-    th:nth-child(4), td:nth-child(4),
-    th:nth-child(5), td:nth-child(5),
-    th:nth-child(6), td:nth-child(6) {
-      width: 13.5%;
-    }
-
-    tr {
-      height: 22px;
-    }
-  </style>
+    <title>My Game App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body style="background:black; color:#00ff88; margin:0; font-family:Arial;">
 
-<div class="container">
-
-  <h1>UK SOURCE</h1>
-  <h2>MAY PERFORMANCE RESULTS</h2>
-
-  <div class="table-container">
-    <table>
-      <tr>
-        <th>Day</th>
-        <th>Match</th>
-        <th>Selection</th>
-        <th>Odds</th>
-        <th>Result</th>
-        <th>Status</th>
-      </tr>
-
-      <script>
-        for (let i = 1; i <= 30; i++) {
-          document.write(`
-            <tr>
-              <td>${i}</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          `);
-        }
-      </script>
-
-    </table>
-  </div>
-
+<!-- HEADER -->
+<div style="text-align:center; padding:30px 10px 10px;">
+    <h2 style="margin:0; font-size:20px;">UK SOURCE</h2>
+    <h4 style="margin:5px 0 10px; font-size:14px;">MAY PERFORMANCE RESULTS</h4>
 </div>
+
+<!-- TABLE -->
+<table border="1" style="width:95%; margin:10px auto; border-collapse:collapse; border-color:red; text-align:center;">
+
+<tr>
+    <th>Day</th>
+    <th>Match</th>
+    <th>Selection</th>
+    <th>Odds</th>
+    <th>Result</th>
+    <th>Status</th>
+</tr>
+
+<script>
+for (let i = 1; i <= 31; i++) {
+    document.write(`
+    <tr>
+        <td>${i}</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    `);
+}
+</script>
+
+</table>
 
 </body>
 </html>
