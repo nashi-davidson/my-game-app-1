@@ -1,46 +1,110 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Game App</title>
+    <title>UK SOURCE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            background: #000;
+            color: #00ffcc;
+            text-align: center;
+            font-family: Arial;
+            margin: 0;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 95%;
+            margin: 10px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid red;
+            padding: 6px;
+            font-size: 12px;
+        }
+    </style>
 </head>
 
-<body style="background:black; color:#00ff88; margin:0; font-family:Arial;">
+<body>
 
-<!-- HEADER -->
-<div style="text-align:center; padding:30px 10px 10px;">
-    <h2 style="margin:0; font-size:20px;">UK SOURCE</h2>
-    <h4 style="margin:5px 0 10px; font-size:14px;">MAY PERFORMANCE RESULTS</h4>
+<!-- LOGIN SECTION -->
+<div id="login">
+    <h2>Login</h2>
+
+    <input id="username" placeholder="Enter Username"><br>
+    <input id="password" type="password" placeholder="Enter Password"><br>
+
+    <button onclick="enterApp()">Enter</button>
+
+    <p id="msg" style="color:red;"></p>
 </div>
 
-<!-- TABLE -->
-<table border="1" style="width:95%; margin:10px auto; border-collapse:collapse; border-color:red; text-align:center;">
+<!-- APP SECTION -->
+<div id="app" style="display:none;">
 
-<tr>
-    <th>Day</th>
-    <th>Match</th>
-    <th>Selection</th>
-    <th>Odds</th>
-    <th>Result</th>
-    <th>Status</th>
-</tr>
+    <h2>UK SOURCE</h2>
+    <h4>MAY PERFORMANCE RESULTS</h4>
+
+    <table>
+        <tr>
+            <th>Day</th>
+            <th>Match</th>
+            <th>Selection</th>
+            <th>Odds</th>
+            <th>Result</th>
+            <th>Status</th>
+        </tr>
+
+        <script>
+            for (let i = 1; i <= 31; i++) {
+                document.write(`
+                    <tr>
+                        <td>${i}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                `);
+            }
+        </script>
+
+    </table>
+
+</div>
 
 <script>
-for (let i = 1; i <= 31; i++) {
-    document.write(`
-    <tr>
-        <td>${i}</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    `);
+function enterApp() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    // LOGIN DETAILS (you can change these)
+    if(user === "admin" && pass === "1234") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("app").style.display = "block";
+    } else {
+        document.getElementById("msg").innerText = "Wrong username or password";
+    }
 }
 </script>
-
-</table>
 
 </body>
 </html>
